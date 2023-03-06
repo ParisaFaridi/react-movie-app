@@ -1,6 +1,7 @@
 import "./App.css";
 import axios from "axios";
 import { useState } from "react";
+import Movie from "./Movie";
 
 function App() {
   let [trendings, setTrendings] = useState();
@@ -10,12 +11,16 @@ function App() {
       .get(`https://api.themoviedb.org/3/trending/all/day?api_key=${apiKey}`)
       .then((response) => {
         setTrendings(response.data.results);
+        console.log(response);
       });
   }
   return trendings ? (
     <div className="App">
       <div className="container">
-        <p>{trendings[0].name}</p>
+        {trendings.map((movie, i) => {
+          return <Movie movie={movie} key={i} />;
+        })}
+        <a href="https://github.com/ParisaFaridi/react-movie-app">The code</a>
       </div>
     </div>
   ) : (
