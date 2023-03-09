@@ -3,7 +3,7 @@ import "./Movie.css";
 
 function Movie(props) {
   return props.movie.media_type === "movie" ? (
-    <div>
+    <div className="movie">
       <img
         src={`https://www.themoviedb.org/t/p/w500/${props.movie.poster_path}`}
         alt=""
@@ -11,12 +11,12 @@ function Movie(props) {
       <p>{props.movie.original_title}</p>
     </div>
   ) : (
-    <div>
+    <div className="movie">
       <img
         src={`https://www.themoviedb.org/t/p/w500/${props.movie.poster_path}`}
         alt=""
       />
-      <p>{props.movie.name}</p>
+      <p className="title">{props.movie.name}</p>
     </div>
   );
 }

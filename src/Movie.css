@@ -1,4 +1,7 @@
 img {
-  height: 300px;
+  height: 15rem;
   margin-bottom: 6px;
+}
+.movie {
+  width: 15rem;
 }

@@ -17,9 +17,11 @@ function App() {
   return trendings ? (
     <div className="App">
       <div className="container">
-        {trendings.map((movie, i) => {
-          return <Movie movie={movie} key={i} />;
-        })}
+        <div className="movies">
+          {trendings.map((movie, i) => {
+            return <Movie movie={movie} key={i} />;
+          })}
+        </div>
         <a href="https://github.com/ParisaFaridi/react-movie-app">The code</a>
       </div>
     </div>
